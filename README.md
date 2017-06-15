@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
 
+# ExternalComponents
+Click-Ouside must be installed to improve the DropdownAction.
+Run `npm install ng-click-outside --save` and `import { ClickOutsideModule } from 'ng-click-outside';` in the Module you want to use it.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
