@@ -1,0 +1,25 @@
+<ul *ngIf="showTable" [ngStyle]="styleTable" id="dropdownTables" (window:resize)="showTable = false"> <!-- Tables Dropdown -->
+  <li (click)="styleTable={'display': 'none'}; softDelete(id); showTable = false">Excluir</li>
+</ul>
+<div class="row">
+	<div #mainCol class="col s4 m3 l2 xl1"></div>
+	<div id="mainPanel" class="col s8 m9 l10 xl11">
+    <div class="row"> <!-- Basic Info -->
+      <h4 class="col m4 l3 fonts">Mesas</h4>
+    </div>
+    <div id="scrollSpace">
+      <div class="col s6 m3 l2" *ngFor="let table of tablesAux"> <!-- Tables Cards -->
+        <div class="card" [class.True]="table.state">
+          <a (click)="styleTable=dropTable($event, 35); id=table.id; showTable = true"
+           (clickOutside)="styleTable={'display': 'none'}; showTable = false" attachOutsideOnClick= 'true'>
+            <img src="./assets/icon/option.png">
+          </a>
+          <div class="card-content" [routerLink]="[table.id]">
+            <img src="./assets/icon/table.png" style="width: 25%; margin: auto">
+            <h5>{{table.id}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+</div>  

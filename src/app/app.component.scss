@@ -1,0 +1,116 @@
+/* For Small Mobile Phones */
+@media only screen and (max-width: 356px) {
+  #hello{
+    font-size: 8px;
+    margin-top: 6px;
+    margin-bottom: 0px;
+  }
+  b{
+    font-size: 10px;
+  }
+
+  .white-text{
+    font-size: 9px;
+  }
+}
+/* For Mobile Phones */
+@media only screen and (min-width: 357px) {
+  #hello{
+    font-size: 10px;
+    margin-top: 6px;
+    margin-bottom: 0px;
+  }
+  b{
+    font-size: 12px;
+  }
+
+  .white-text{
+    font-size: 10px;
+  }
+}
+/* For Tablets */
+@media only screen and (min-width: 601px) {
+  #hello{
+    font-size: 10px;
+    margin-top: 6px;
+    margin-bottom: 0px;
+  }
+  b{
+    font-size: 12px;
+  }
+
+  .white-text{
+    font-size: 14px;
+  }
+}
+/* For Desktops */
+@media only screen and (min-width: 993px) {
+  #hello {
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+  }
+  b {
+    font-size: 14px;
+  }
+
+  .white-text {
+    font-size: 14px;
+  }
+}
+
+#mainList {
+  border: none;
+}
+
+.card-content {
+  padding: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.collection{
+  border: none;
+  top: 100px;
+  cursor: pointer;
+   margin: 0px;
+}
+
+.collection-item {
+  background: transparent;
+  padding: 10px 0px 10px 40px;
+}
+
+.col {
+  padding: 0px;
+}
+
+.selected{
+  background: #ffb444;
+}
+
+li {
+  padding: 0px;
+  cursor: pointer;
+  .col {
+    margin: 0;
+  }
+  .row {
+    padding: 0px;
+    margin-bottom: 0px;
+  }
+  a{
+    text-align: center;
+  }
+  img {
+    max-width: 12px;
+    width: 50%;
+  }
+  p{
+    line-height: 30px;
+  }
+}
+
+:focus {
+  outline: none;
+}

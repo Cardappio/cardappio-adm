@@ -1,0 +1,39 @@
+<div id="background" class=" valign-wrapper">
+  <div class="fullWidth">
+    <div class="container center">
+      <div id="title">
+        <b>PAINEL ADMINISTRATIVO</b>
+      </div>
+      <form class="col" [formGroup]="loginForm" novalidate> <!-- (ngSubmit)="onSubmit()"  -->
+        <div class="input-field valign-wrapper"> 
+          <input required
+            formControlName="email"
+            placeholder="Email"
+            name="email"
+            type="email"
+            class="validate" [(ngModel)]="email">
+          <label for="email" class="error" *ngIf="emailControl.hasError('required') && emailControl.touched">
+          Coloque o seu email de usuário
+          </label>
+        </div>
+        <div class="input-field valign-wrapper">
+          <input required
+            formControlName="password"
+            placeholder="Senha"
+            name="password"
+            type="password"
+            class="validate" [(ngModel)]="password">
+          <label for="password" class="error" *ngIf="passwordControl.hasError('required') && passwordControl.touched">
+          Coloque a sua senha
+          </label>
+        </div>
+        <label class="error" *ngIf="hasError">
+          Email ou senha inválidos
+        </label>
+        <div class="row">
+          <button type="submit"  routerLink="/tables" class="btn round valign-wrapper" [disabled]="loginForm.invalid">Entrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="row">
+	<div #mainCol class="col s4 m3 l2 xl1"></div>
+	<div id="mainPanel" class="col s8 m9 l10 xl11">
+    <div class="valign-wrapper">
+      <h4 class="gray-color fonts">Mesas ></h4><h4 class="fonts">{{table.id}}</h4>
+    </div>
+    <div class="row" id="info">
+      <div class="col s6 m4 l2">
+        <div class="row" id="tableCard"> <!-- Table Card -->
+          <div class="card" [class.True]="table.state" [class.False]="!table.state">
+            <a style="margin: 15px 15px 0 0">
+              <img src="./assets/icon/option.png">
+            </a>
+            <div class="card-content">
+            <img src="./assets/icon/table.png" style="width: 50%; margin: auto">
+              <h5>{{table.id}}</h5>
+            </div>
+          </div>
+        </div>
+        <div class="row" id="optionCard"> <!-- Option Cards -->
+          <div class="card">
+            <div class="card-content">
+              <a (click)="optionChosed = 1" >
+                <div class="row valign-wrapper" [class.selected]="optionChosed === 1">
+                  <p class="fonts">Pedidos</p>
+                </div>
+              </a>
+              <li class="divider"></li>
+              <a (click)="optionChosed = 2">
+                <div class="row valign-wrapper" [class.selected]="optionChosed === 2">
+                  <p class="fonts">Atendimento</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col s6 m8 l10" id="panelChosed">
+        <div *ngIf="optionChosed==1" id="pedidos">
+          <div class="col s12 m12 l9" id="header">
+            <p>HISTÓRICO DOS PEDIDOS</p>
+          </div>
+        </div>
+        <div *ngIf="optionChosed==2" id="atendimentos">
+          <div class="col s12 m12 l9" id="header">
+            <p>ATENDIMENTOS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+</div>      
