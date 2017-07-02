@@ -9,6 +9,7 @@ import { ClickOutsideModule } from 'ng-click-outside';
 
 import { LoginModule } from './pages/login/login.module';
 import { TablesModule } from './pages/menu/tables/tables.module';
+import { CardapioModule } from './pages/menu/cardapio/cardapio.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TablesModule } from './pages/menu/tables/tables.module';
     FormsModule,
     HttpModule,
     LoginModule,
-    TablesModule
+    TablesModule,
+    CardapioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

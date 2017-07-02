@@ -8,9 +8,6 @@
       <div class="col s6 m4 l2">
         <div class="row" id="tableCard"> <!-- Table Card -->
           <div class="card" [class.True]="table.state" [class.False]="!table.state">
-            <a style="margin: 15px 15px 0 0">
-              <img src="./assets/icon/option.png">
-            </a>
             <div class="card-content">
             <img src="./assets/icon/table.png" style="width: 50%; margin: auto">
               <h5>{{table.id}}</h5>
@@ -29,6 +26,11 @@
               <a (click)="optionChosed = 2">
                 <div class="row valign-wrapper" [class.selected]="optionChosed === 2">
                   <p class="fonts">Atendimento</p>
+                </div>
+              </a>
+              <a>
+                <div class="row valign-wrapper True">
+                  <p class="fonts">Excluir</p>
                 </div>
               </a>
             </div>

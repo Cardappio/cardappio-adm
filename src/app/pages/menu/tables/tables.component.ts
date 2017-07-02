@@ -12,7 +12,6 @@ import { TablesService } from './../../providers/tables.service';
 export class TablesComponent implements OnInit {
   tables: Table[];
   tablesAux: Table[];
-  showTable = false; styleTable;
   
   constructor(private tablesService: TablesService){}
 

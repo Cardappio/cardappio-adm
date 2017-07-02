@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { TablesComponent } from './pages/menu/tables/tables.component';
+import { CardapioComponent } from './pages/menu/cardapio/cardapio.component';
 
 const appRoutes: Routes = [
   {
@@ -16,7 +17,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'cardapio',
-    component: TablesComponent
+    component: CardapioComponent
   },
   {
     path: 'promotions',

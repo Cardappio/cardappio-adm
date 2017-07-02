@@ -1,8 +1,8 @@
 <div class="row" style="overflow-y: hidden;">
 	<div id="mainCol" class="col s4 m3 l2 xl1 hide-on-small-only">
 		<ul class="collection" *ngFor="let section of sections">
-			<a routerLink='{{section.route}}' (click)="option= section.option">	
-				<li class="collection-item" [class.selected]="option=== section.option">
+			<a routerLink='{{section.route}}'>	
+				<li class="collection-item" [class.selected]="checkUrl(section.route)">
 					<div class="white-text row valign-wrapper">
 						<p class ="col s10"><b>{{section.name}}</b></p>
 					</div>

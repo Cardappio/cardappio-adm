@@ -1,0 +1,35 @@
+<ul *ngIf="showSection" [ngStyle]="styleSection" id="dropdownSection" (window:resize)="showSection = false" (window:scroll)="showSection = false"><!-- Section Dropdown -->
+  <div *ngFor="let section of sections">
+    <li (click)= "getSection(section.name)">{{section.name}}</li>
+  </div>
+</ul>
+<div class="row">
+	<div #mainCol class="col s4 m3 l2 xl1"></div>
+	<div id="mainPanel" class="col s8 m9 l10 xl11">
+    <div class="row"> <!-- Basic Info -->
+      <h4 class="col m4 l8 fonts">Cardapio</h4>
+      <div class="col s6 m3 l2">
+        <div id="inputCamp" class="valign-wrapper">
+          <input placeholder="Buscar por Nome" type="text" (input)="getItems($event)">
+        </div>
+      </div>
+      <div class="col s6 m3 l2">
+        <div #dropdown id="inputCamp" (click)="styleSection = dropSection(); showSection=true" class="valign-wrapper">
+          <input [(ngModel)]="selectedSection" type="text" disabled>
+          <a (clickOutside) = "styleSection={'display': 'none'}; showSection=false">
+            <img src="./assets/icon/arrow_d.png">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="scrollSpace">
+      <div class="col s6 m3 l2" *ngFor="let cardapio of cardapioAux"> <!-- Cardapio Cards -->
+        <div class="card">
+          <div class="card-content" [routerLink]="[cardapio.id]">
+            <h5>{{cardapio.name}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+</div>  
