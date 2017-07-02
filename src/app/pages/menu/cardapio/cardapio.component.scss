@@ -46,7 +46,7 @@
 
 #mainPanel {
   padding: 4%;
-  overflow-y: hidden;
+  overflow-y: auto;
   h4{
     font-size: 1.7rem;
   }
@@ -81,6 +81,7 @@
     padding: 0 0.5rem;
   }
 }
+
 
 .card{
   background-color: white;

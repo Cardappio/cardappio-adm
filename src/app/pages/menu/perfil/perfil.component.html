@@ -4,5 +4,84 @@
     <div class="row"> <!-- Basic Info -->
       <h4 class="col m4 l8 fonts">Perfil</h4>
     </div>
+    <div class="col s12 m12 l8 center scrollSpace" id="panelPerfil">
+      <div id="perfil">
+        <form style="margin: 1rem 0;"class="center"> <!--  #patientForm="ngForm" novalidate -->
+          <div class="row"> 
+            <div class="input-field col s12">
+              <input placeholder="Nome do estabelecimento" name="name" type="text">
+              <label for="name">Nome</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s3">
+              <input placeholder="Ex: Estado Cicrano" name="state" type="text">
+              <label for="state">Estado</label>
+            </div>
+            <div class="input-field col s3">
+              <input placeholder="Ex: Bairro Cicrano" name="bairro" type="text">
+              <label for="bairro">Bairro</label>
+            </div>
+            <div class="input-field col s3">
+              <input placeholder="Ex: Churrascaria" name="type" type="text">
+              <label for="type">Tipo</label>
+            </div>
+            <div class="input-field col s3">
+              <input placeholder="Ex: (00) 0000 - 0000" name="number" type="number">
+              <label for="number">Telefone</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s4">
+              <input placeholder="Ex: Fortaleza" name="city" type="text">
+              <label for="city">Cidade</label>
+            </div>
+            <div class="input-field col s6">
+              <input placeholder="Ex: Rua Fulano" name="address" type="text">
+              <label for="address">Rua</label>
+            </div>
+            <div class="input-field col s2">
+              <input placeholder="Ex: 0000" name="number" type="number">
+              <label for="number">Número</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s3">
+              <input placeholder="Ex: 00:00" name="number" type="number">
+              <label for="number">Abertura</label>
+            </div>
+            <div class="input-field col s3">
+              <input placeholder="Ex: 00:00" name="number" type="number">
+              <label for="number">Fechamento</label>
+            </div>
+            <div class="col s6">
+              <input type="checkbox" id="test0" />
+              <label for="test0">Domingo</label>
+              <input type="checkbox" id="test1" />
+              <label for="test1">Segunda</label>
+              <input type="checkbox" id="test2" />
+              <label for="test2">Terça</label>
+              <input type="checkbox" id="test3" />
+              <label for="test3">Quarta</label>
+              <input type="checkbox" id="test4" />
+              <label for="test4">Quinta</label>
+              <input type="checkbox" id="test5" />
+              <label for="test5">Sexta</label>
+              <input type="checkbox" id="test6" />
+              <label for="test6">Sábado</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea placeholder="Descrição do estabelecimento" name="description" type="text" class="materialize-textarea"></textarea>
+              <label for="description">Descrição</label>
+            </div>
+          </div>
+          <button class="btn valign-wrapper"> <!-- (click)="" [disabled]="!patientForm.form.valid" -->
+            Adicionar
+          </button>
+        </form>
+      </div>
+    </div>
 	</div>
 </div>  

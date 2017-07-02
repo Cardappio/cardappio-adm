@@ -1,5 +1,5 @@
 <div class="row" style="overflow-y: hidden;">
-	<div id="mainCol" class="col s4 m3 l2 xl1 hide-on-small-only">
+	<div id="mainCol" class="col s4 m3 l2 xl1">
 		<ul class="collection" *ngFor="let section of sections">
 			<a routerLink='{{section.route}}'>	
 				<li class="collection-item" [class.selected]="checkUrl(section.route)">

@@ -8,9 +8,18 @@ import { ItemsService } from './../../providers/items.service';
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.scss']
 })
-
 export class PerfilComponent implements OnInit {
   perfil; perfilAux; stylePerfil; showPerfil = false;
+
+  option = [
+    {id: 0, status: false, name: 'Domingo'},
+    {id: 1, status: true, name: 'Segunda'},
+    {id: 2, status: false, name: 'Terça'},
+    {id: 3, status: false, name: 'Quarta'},
+    {id: 4, status: false, name: 'Quinta'},
+    {id: 5, status: false, name: 'Sexta'},
+    {id: 6, status: false, name: 'Sábado'}
+  ]
   
   constructor(private itemsService: ItemsService){}
 
@@ -37,15 +46,4 @@ export class PerfilComponent implements OnInit {
     }
     return css;
   }
-
-  modal(){
-    let css = {
-      'display': 'block',
-      'z-index': 0,
-      'opacity': 0.7
-    }
-    return css;
-  }
-
-  softDelete(id: number){}
 }
