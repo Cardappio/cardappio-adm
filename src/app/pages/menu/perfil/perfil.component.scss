@@ -1,0 +1,84 @@
+/* For Small Mobile Phones */
+@media only screen and (max-width: 356px) {
+  h5, p {
+    font-size: 12px;
+  }
+}
+/* For Mobile Phones */
+@media only screen and (max-width: 600px) {
+  h5, p {
+    font-size: 14px;
+  }
+}
+/* For Desktops */
+@media only screen and (max-width: 993px) {
+  h5, p {
+    font-size: 17px;
+  }
+}
+
+#background {
+  height: 100%;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#mainPanel {
+  padding: 4%;
+  overflow-y: hidden;
+  h4{
+    font-size: 1.7rem;
+  }
+  .row{
+     padding: 0 0.5rem;
+  }
+}
+
+#scrollSpace {
+  max-height: 90%;
+  overflow-y: auto;
+  .col{
+    padding: 0 0.5rem;
+  }
+}
+
+.card{
+  background-color: white;
+  border-radius: 2%;
+  a{
+    cursor: pointer;
+    float: right;
+    margin-right: 15px;
+    margin-top: 15px;
+  }
+}
+
+.card-content{
+  cursor: pointer;
+  height: 150px;
+  text-align: center;
+  h5{
+    font-weight: bold;
+    line-height: 25px;
+    margin: 0px;
+    margin-top: 0.82rem;
+  }
+}
+
+.center{
+  display: block;
+  margin: auto;
+}
+
+.fonts{
+  font-weight: 900;
+  margin: 0px; 
+  padding: 0px;
+}
+
+:focus {
+  outline: none;
+}

@@ -15,7 +15,7 @@ export class CardapioItemComponent implements OnInit{
   optionChosed: number = 1;
   cardapioItem: Item = {id: 0, name: '', price: 0, section: ''};
   selectedSection: string = 'Selecione'; styleSection;
-  styleModal;
+  styleModal; styleDelete; showDelete = false;
 
   sections = [
     {name: 'Refeições'},
@@ -54,4 +54,15 @@ export class CardapioItemComponent implements OnInit{
     }
     return css;
   }
+
+  modal(){
+    let css = {
+      'display': 'block',
+      'z-index': 0,
+      'opacity': 0.7
+    }
+    return css;
+  }
+
+  delete(){}
 }

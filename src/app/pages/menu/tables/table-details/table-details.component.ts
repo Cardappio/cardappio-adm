@@ -14,6 +14,7 @@ import { TablesService } from './../../../providers/tables.service';
 export class TableDetailsComponent implements OnInit{
   table: Table;
   optionChosed: number = 1;
+  styleModal; styleDelete; showDelete = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,4 +30,15 @@ export class TableDetailsComponent implements OnInit{
         .then((table: Table) => this.table = table);
     });
   }
+
+  modal(){
+    let css = {
+      'display': 'block',
+      'z-index': 0,
+      'opacity': 0.7
+    }
+    return css;
+  }
+
+  delete(){}
 }

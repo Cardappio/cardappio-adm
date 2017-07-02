@@ -24,6 +24,9 @@
   top: 0;
   left: 0;
   width: 100%;
+  button{
+    margin: 2rem;
+  }
 }
 
 /*#dropdownPatients{ Maybe can be used
@@ -58,6 +61,15 @@
   border-left: 8px solid transparent;
   margin: -6px 0px 0px 30px;
 }*/
+
+#background {
+  height: 100%;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 
 #info{
   max-height: 99%;
@@ -104,22 +116,13 @@
 }
 
 #panelChosed{
-  margin: 0.5rem 0 1rem 0rem;
+  margin: 0.5rem auto 1rem auto;
+  min-height: 450px;
   max-height: 600px;
   overflow-y: auto;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-  #header{
-    margin-top: 1rem;
-    margin-bottom: 0;
-    p{
-      color: gray;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-  }
   #pedidos{
     .card{
       margin: 1rem;
@@ -141,6 +144,7 @@
       font-size: 13px;
     }
     form{
+      margin-top: 5px;
       padding: 5px;
       #sections{
         color: gray;
@@ -191,7 +195,6 @@
 
 .btn {
   background: #ffb444;
-  border-radius: 25px;
   box-shadow: none;
 }
 
@@ -238,6 +241,49 @@
     margin-bottom: 15px; 
     padding: 0px;
   }
+}
+
+.modal{
+  background: white;
+  border-radius: 5px;
+  box-shadow: 2px -2px 13px 3px rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  display: none;
+  margin: auto;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  width: 25%;
+  min-width: 300px;
+  z-index: 1;
+  header{
+    margin-bottom: 0px;
+    padding: 3%;
+    padding-right: 2%;
+    h4{
+      font-size: 20px;
+      margin-top: 5px;
+    }
+    img{
+      cursor: pointer;
+      float: right;
+    }
+  }
+}
+
+.modal-overlay {
+  background: black;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  min-height: 450px;
+  position: absolute;
+  overflow-y: hidden;
+  height: 100%;
+  width: 100%;
+  will-change: opacity;
+  z-index: -5;
 }
 
 .selected{

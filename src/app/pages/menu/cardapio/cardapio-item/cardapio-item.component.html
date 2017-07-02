@@ -3,6 +3,21 @@
     <li>{{section.name}}</li>
   </div>
 </ul>
+<div *ngIf="showDelete" id="background" class="valign-wrapper"> <!-- Edit Modal -->
+  <div [ngStyle]="styleDelete" class="modal" (window:resize)="showDelete = false">
+    <header class="row valign-wrapper">
+      <h4 class="col s11 fonts">Tem certeza?</h4>
+    </header>
+    <li class="divider"></li>
+    <button class="btn valign-wrapper True" (click)="delete(); styleDelete={'display': 'none'}; showDelete = false">
+      Deletar
+    </button>
+    <button class="btn valign-wrapper" (click)="styleDelete={'display': 'none'}; showDelete = false">
+      Voltar
+    </button>
+  </div>
+</div>
+<div *ngIf="showDelete" [ngStyle]="styleModal" [class.modal-overlay]="showDelete == true"></div> <!-- Shadow background -->
 <div class="row">
 	<div #mainCol class="col s4 m3 l2 xl1"></div>
 	<div id="mainPanel" class="col s8 m9 l10 xl11">
@@ -20,7 +35,7 @@
                 </div>
               </a>
               <li class="divider"></li>
-              <a>
+              <a (click)="styleModal=modal(); styleDelete={'display': 'block'}; showDelete = true">
                 <div class="row valign-wrapper True">
                   <p class="fonts">Excluir</p>
                 </div>

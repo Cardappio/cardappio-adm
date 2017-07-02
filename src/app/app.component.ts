@@ -24,7 +24,7 @@ export class AppComponent implements OnInit{
   sections = [
      {name: 'MESAS', id: '', route: '/tables'},
      {name: 'CARDÁPIO', id: '', route: '/cardapio'},
-     {name: 'PROMOÇÕES', id: '', route: '/promotions'},
+  // {name: 'PROMOÇÕES', id: '', route: '/promotions'},
      {name: 'PERFIL', id: '', route: '/perfil'}
   ]
 

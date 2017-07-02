@@ -24,6 +24,9 @@
   top: 0;
   left: 0;
   width: 100%;
+  button{
+    margin: 2rem;
+  }
 }
 
 /*#dropdownPatients{ Maybe can be used
@@ -143,7 +146,7 @@
       font-size: 14px;
     }
     #p2{
-      color: #64b4f5;
+      color: #ffb444;
       margin: 0;
       font-size: 13px;
     }
@@ -159,12 +162,8 @@
 }
 
 .btn {
-  background: #64b4f5;
-  border-radius: 25px;
+  background: #ffb444;
   box-shadow: none;
-  font-size: 14px;
-  letter-spacing: 1px;
-  width: auto;
 }
 
 .btn:hover{
@@ -210,6 +209,49 @@
     margin-bottom: 15px; 
     padding: 0px;
   }
+}
+
+.modal{
+  background: white;
+  border-radius: 5px;
+  box-shadow: 2px -2px 13px 3px rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  display: none;
+  margin: auto;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  width: 25%;
+  min-width: 300px;
+  z-index: 1;
+  header{
+    margin-bottom: 0px;
+    padding: 3%;
+    padding-right: 2%;
+    h4{
+      font-size: 20px;
+      margin-top: 5px;
+    }
+    img{
+      cursor: pointer;
+      float: right;
+    }
+  }
+}
+
+.modal-overlay {
+  background: black;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  min-height: 450px;
+  position: absolute;
+  overflow-y: hidden;
+  height: 100%;
+  width: 100%;
+  will-change: opacity;
+  z-index: -5;
 }
 
 .selected{

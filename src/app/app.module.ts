@@ -8,8 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { ClickOutsideModule } from 'ng-click-outside';
 
 import { LoginModule } from './pages/login/login.module';
-import { TablesModule } from './pages/menu/tables/tables.module';
 import { CardapioModule } from './pages/menu/cardapio/cardapio.module';
+import { PerfilModule } from './pages/menu/perfil/perfil.module';
+import { TablesModule } from './pages/menu/tables/tables.module';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,9 @@ import { CardapioModule } from './pages/menu/cardapio/cardapio.module';
     FormsModule,
     HttpModule,
     LoginModule,
-    TablesModule,
-    CardapioModule
+    CardapioModule,
+    PerfilModule,
+    TablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

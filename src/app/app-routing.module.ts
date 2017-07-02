@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { TablesComponent } from './pages/menu/tables/tables.component';
 import { CardapioComponent } from './pages/menu/cardapio/cardapio.component';
+import { PerfilComponent } from './pages/menu/perfil/perfil.component';
+import { TablesComponent } from './pages/menu/tables/tables.component';
 
 const appRoutes: Routes = [
   {
@@ -20,12 +21,12 @@ const appRoutes: Routes = [
     component: CardapioComponent
   },
   {
-    path: 'promotions',
+    path: 'promotion',
     component: TablesComponent
   },
   {
     path: 'perfil',
-    component: TablesComponent
+    component: PerfilComponent
   }
 ];
 
