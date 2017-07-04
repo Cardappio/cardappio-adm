@@ -5,7 +5,7 @@ import { Item } from './item.model';
 @Injectable()
 export class ItemsService {
 
-  ITEMS: Item [] = [
+ ITEMS = [
     {id: 1, name: 'Carne', price: 5.50, section: 'Refeições'},
     {id: 2, name: 'Água', price: 9.99, section: 'Bebidas'},
     {id: 3, name: 'Cerveja', price: 9.99, section: 'Bebidas'},
@@ -22,22 +22,22 @@ export class ItemsService {
     {id: 14, name: 'Carne', price: 9.99, section: 'Refeições'}
   ];
 
-  getItems(): Promise<Item[]> {
+  getItems(): Promise<any> {
     return Promise.resolve(this.ITEMS);
   }
 
-  getItem(id: number): Promise<Item> {
+  getItem(id: number): Promise<any> {
     return this.getItems()
-      .then((items: Item[]) => items
+      .then((items: any) => items
         .find(item => item.id === id));
   }
   
-  deleteItem(id: number): Promise<Item[]> {
+  deleteItem(id: number): Promise<any> {
     this.ITEMS = this.ITEMS.filter(item => item.id !== id)
     return Promise.resolve(this.ITEMS);
   }
 
-  submitItem(newItem: Item): Promise<Item[]> {
+  submitItem(newItem: any): Promise<any> {
     this.ITEMS.push(newItem);
     return Promise.resolve(this.ITEMS);
   }

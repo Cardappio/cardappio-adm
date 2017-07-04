@@ -13,7 +13,7 @@ import { ItemsService } from './../../../providers/items.service';
 
 export class CardapioItemComponent implements OnInit{
   optionChosed: number = 1;
-  cardapioItem: Item = {id: 0, name: '', price: 0, section: ''};
+  cardapioItem = {id: 0, name: '', price: 0, section: ''};
   selectedSection: string = 'Selecione'; styleSection;
   styleModal; styleDelete; showDelete = false;
 
@@ -38,7 +38,7 @@ export class CardapioItemComponent implements OnInit{
       let id: number = +params['id'];
       this.itemsService
           .getItem(id)
-          .then((item: Item) => this.cardapioItem = item)
+          .then((item) => this.cardapioItem = item)
     });
   }
 

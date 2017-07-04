@@ -27,6 +27,8 @@ export class TableDetailsComponent implements OnInit{
   ){}
 
   ngOnInit(): void{
+    this.pedidos = [{key: '', cliente: '', estabKey: '', mesaKey: '', 
+                    itens: [{produto: {key: '', nome: '', preco: 0, categoria: '', imagemUrl: '', descricao: '', status: ''}, quantidade: 0, observacao: ''}], status: ''}]
     this.table = new Table();
     this.route.params.forEach((params: Params) => {
       let id: string = params['id'];
@@ -60,6 +62,7 @@ export class TableDetailsComponent implements OnInit{
               ped.status = pedido.status;
               peds.push(ped);
               this.pedidos = peds;
+              console.log(this.pedidos);
             });
           });
         });
