@@ -4,7 +4,7 @@
       <div id="title">
         <b>PAINEL ADMINISTRATIVO</b>
       </div>
-      <form class="col" [formGroup]="loginForm" novalidate> <!-- (ngSubmit)="onSubmit()"  -->
+      <form class="col" [formGroup]="loginForm" novalidate (ngSubmit)="loginUser()" >
         <div class="input-field valign-wrapper"> 
           <input required
             formControlName="email"
@@ -31,7 +31,7 @@
           Email ou senha inválidos
         </label>
         <div class="row">
-          <button type="submit"  routerLink="/tables" class="btn round valign-wrapper" [disabled]="loginForm.invalid">Entrar</button>
+          <button type="submit" class="btn round valign-wrapper" [disabled]="loginForm.invalid">Entrar</button>
         </div>
       </form>
     </div>

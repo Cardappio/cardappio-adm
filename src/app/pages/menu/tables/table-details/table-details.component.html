@@ -17,15 +17,15 @@
 	<div #mainCol class="col s4 m3 l2 xl1"></div>
 	<div id="mainPanel" class="col s8 m9 l10 xl11">
     <div class="valign-wrapper">
-      <h4 class="gray-color fonts">Mesas ></h4><h4 class="fonts">{{table.id}}</h4>
+      <h4 class="gray-color fonts">Mesas ></h4><h4 class="fonts">{{table.numero}}</h4>
     </div>
     <div class="row" id="info">
       <div class="col s6 m4 l2">
         <div class="row" id="tableCard"> <!-- Table Card -->
-          <div class="card" [class.True]="table.state" [class.False]="!table.state">
+          <div class="card" [class.True]="table.status" [class.False]="!table.status">
             <div class="card-content">
             <img src="./assets/icon/table.png" style="width: 50%; margin: auto">
-              <h5>{{table.id}}</h5>
+              <h5>{{table.numero}}</h5>
             </div>
           </div>
         </div>

@@ -6,6 +6,8 @@ import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module';
 import { TablesModule } from './../menu/tables/tables.module';
 
+import { AuthService } from '../providers/auth.service';
+
 @NgModule({
   declarations:[
     LoginComponent
@@ -20,6 +22,6 @@ import { TablesModule } from './../menu/tables/tables.module';
     TablesModule,
     ReactiveFormsModule
   ],
-  providers:[]
+  providers:[AuthService]
 })
 export class LoginModule {}

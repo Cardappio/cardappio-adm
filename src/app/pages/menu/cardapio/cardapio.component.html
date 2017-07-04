@@ -23,7 +23,7 @@
       </div>
     </div>
     <div id="scrollSpace">
-      <div class="col s6 m3 l2" *ngFor="let cardapio of cardapioAux | filter:busca"> <!-- Cardapio Cards -->
+      <div class="col s6 m3 l2" *ngFor="let cardapio of cardapioAux"> <!-- Cardapio Cards -->
         <div class="card">
           <div class="card-content" [routerLink]="[cardapio.id]">
             <h5>{{cardapio.name}}</h5>

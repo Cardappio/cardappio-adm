@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import { Table } from './../../providers/table.model';
 import { TablesService } from './../../providers/tables.service';
+import { AuthService } from './../../providers/auth.service';
 
 @Component({
   selector: 'tables',
@@ -13,7 +14,9 @@ export class TablesComponent implements OnInit {
   tables: Table[];
   tablesAux: Table[];
   
-  constructor(private tablesService: TablesService){}
+  constructor(private tablesService: TablesService, private authData: AuthService){
+    this.tables = [];
+  }
 
   @ViewChild('dropdown') dropdown: ElementRef;
   @ViewChild('mainCol') mainCol: ElementRef;
@@ -21,8 +24,17 @@ export class TablesComponent implements OnInit {
   @ViewChild('imgInputEdit') imgInputEdit: ElementRef;
 
   ngOnInit(): void {
-    this.tablesService.getTables()
-      .then((tables: Table[]) => this.tables = this.tablesAux = tables);
+    this.tablesService.getTables().subscribe(mesas => {
+      let mesasTmp: Table[] = [];
+      mesas.forEach(mesa => {
+        let mesaTmp = new Table();
+        mesaTmp.key = mesa.$key;
+        mesaTmp.numero = mesa.numero;
+        mesaTmp.status = mesa.status;
+        mesasTmp.push(mesaTmp);
+      });
+      this.tables = mesasTmp;
+    });
   }
 
   dropTable(ev, minus){

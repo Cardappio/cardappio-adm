@@ -5,11 +5,11 @@
       <h4 class="col m4 l3 fonts">Mesas</h4>
     </div>
     <div id="scrollSpace">
-      <div class="col s6 m3 l2" *ngFor="let table of tablesAux"> <!-- Tables Cards -->
-        <div class="card" [class.True]="table.state">
-          <div class="card-content" [routerLink]="[table.id]">
+      <div class="col s6 m3 l2" *ngFor="let table of tables"> <!-- Tables Cards -->
+        <div class="card" [class.True]="table.status">
+          <div class="card-content" [routerLink]="[table.key]">
             <img src="./assets/icon/table.png" style="width: 25%; margin: auto">
-            <h5>{{table.id}}</h5>
+            <h5>{{table.numero}}</h5>
           </div>
         </div>
       </div>

@@ -1,39 +1,87 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 import { Table } from './table.model';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class TablesService {
 
-  TABLES: Table [] = [
-    {id:  0, state: true},
-    {id:  1, state: false},
-    {id:  2, state: false},
-    {id:  3, state: false},
-    {id:  4, state: false},
-    {id:  5, state: true},
-    {id:  6, state: false},
-    {id:  7, state: false},
-    {id:  8, state: false},
-    {id:  9, state: false},
-    {id:  10, state: true},
-    {id:  11, state: false},
-    {id:  12, state: false},
-    {id:  13, state: false}
-  ];
+  TABLES: Table[] = [];
 
-  getTables(): Promise<Table[]> {
-    return Promise.resolve(this.TABLES);
+  constructor(private authService: AuthService, private db: AngularFireDatabase) {
+
   }
 
-  getTable(id: number): Promise<Table> {
-    return this.getTables()
-      .then((tables: Table[]) => tables
-        .find(table => table.id === id));
+  getTables() {
+    return Observable.create(_mesas => {
+      this.authService.getCurrentUser().subscribe(user => {
+        this.db.object('/gerentes_estabelecimentos/'+user.uid).subscribe(gerente => {
+          this.db.list('mesas/'+gerente.estabelecimento).subscribe(mesas => {
+            _mesas.next(mesas);
+          });
+        });
+      });
+    });
+  }
+
+  getTable(id: string) {
+    return Observable.create(_mesa => {
+      this.authService.getCurrentUser().subscribe(user => {
+        this.db.object('/gerentes_estabelecimentos/'+user.uid).subscribe(gerente => {
+          this.db.object('mesas/'+gerente.estabelecimento+'/'+id).subscribe(mesa => {
+            _mesa.next(mesa);
+          });
+        });
+      });
+    });
+  }
+
+  getPedidos(mesaKey: string) {
+    return Observable.create(_pedidos => {
+      this.authService.getCurrentUser().subscribe(user => {
+        this.db.object('/gerentes_estabelecimentos/'+user.uid).subscribe(gerente => {
+          this.db.list('pedidos/'+gerente.estabelecimento+'/'+mesaKey).subscribe(pedido => {
+            _pedidos.next(pedido);
+          });
+        });
+      });
+    });
+  }
+
+  getItensPedido(mesaKey: string, pedidoKey: string) {
+    return Observable.create(_itensPedido => {
+      this.authService.getCurrentUser().subscribe(user => {
+        this.db.object('/gerentes_estabelecimentos/'+user.uid).subscribe(gerente => {
+          this.db.list('pedidos/'+gerente.estabelecimento+'/'+mesaKey+'/'+pedidoKey+'/itens').subscribe(itens => {
+            _itensPedido.next(itens);
+          });
+        });
+      });
+    });
+  }
+
+  getItem(itemKey: string) {
+    return Observable.create(_itemCardapio => {
+      this.authService.getCurrentUser().subscribe(user => {
+        this.db.object('/gerentes_estabelecimentos/'+user.uid).subscribe(gerente => {
+          this.db.list('cardapios/'+gerente.estabelecimento).subscribe(cardapios => {
+            cardapios.forEach(cardapio => {
+              this.db.object('cardapios/'+gerente.estabelecimento+'/'+cardapio.$key+'/'+itemKey).subscribe(itemCardapio => {
+                if(itemCardapio.nome != undefined)
+                  _itemCardapio.next(itemCardapio);
+              });
+            });
+          });
+        });
+      });
+    });
   }
   
   deleteTable(id: number): Promise<Table[]> {
-    this.TABLES = this.TABLES.filter(table => table.id !== id)
+    // this.TABLES = this.TABLES.filter(table => table.id !== id)
     return Promise.resolve(this.TABLES);
   }
 
