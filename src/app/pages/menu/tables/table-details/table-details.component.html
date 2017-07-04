@@ -57,6 +57,24 @@
           <div class="col s12 m12 l9" id="header">
             <p>HISTÓRICO DOS PEDIDOS</p>
           </div>
+          <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Descrição</th>
+          </tr>
+          <tr *ngFor="let item of itensPedidos">
+            <td>{{item.produto.nome}}</td>
+            <td>{{item.produto.preco}}</td>
+            <td>{{item.quantidade}}</td>
+            <td>{{item.produto.descricao}}</td>
+          </tr>
+          <tr>
+            <td> <button (click)="totalValue()">Total</button></td>
+            <td>{{total}}</td>
+            <td></td>
+            <td></td>
+          </tr>
         </div>
         <div *ngIf="optionChosed==2" id="atendimentos">
           <div class="col s12 m12 l9" id="header">

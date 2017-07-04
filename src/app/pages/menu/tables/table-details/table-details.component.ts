@@ -17,6 +17,7 @@ import { TablesService } from './../../../providers/tables.service';
 export class TableDetailsComponent implements OnInit{
   table: Table;
   pedidos: Pedido[];
+  itensPedidos; total = 0;
   optionChosed: number = 1;
   styleModal; styleDelete; showDelete = false;
 
@@ -27,8 +28,7 @@ export class TableDetailsComponent implements OnInit{
   ){}
 
   ngOnInit(): void{
-    this.pedidos = [{key: '', cliente: '', estabKey: '', mesaKey: '', 
-                    itens: [{produto: {key: '', nome: '', preco: 0, categoria: '', imagemUrl: '', descricao: '', status: ''}, quantidade: 0, observacao: ''}], status: ''}]
+    this.pedidos = [new Pedido()];
     this.table = new Table();
     this.route.params.forEach((params: Params) => {
       let id: string = params['id'];
@@ -62,11 +62,10 @@ export class TableDetailsComponent implements OnInit{
               ped.status = pedido.status;
               peds.push(ped);
               this.pedidos = peds;
-              console.log(this.pedidos);
+              this.itensPedidos = this.pedidos[0].itens;
             });
           });
         });
-        console.log(this.pedidos);
       });
     });
   }
@@ -78,6 +77,12 @@ export class TableDetailsComponent implements OnInit{
       'opacity': 0.7
     }
     return css;
+  }
+
+  totalValue(){
+    for(let x=0; x<this.itensPedidos.length; x++){
+      this.total += parseFloat(this.itensPedidos[x].produto.preco);
+    } 
   }
 
   delete(){}
